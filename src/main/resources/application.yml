@@ -1,8 +1,5 @@
-amazon:
-  aws:
-    accessKey: ${AWS_ACCESS_KEY_ID}
-    secretKey: ${AWS_SECRET_ACCESS_KEY}
-  dynamodb:
-    endpoint: http://localhost:8000/
+spring:
+  application:
+    name: qbthon-service
 server:
   port: 8090

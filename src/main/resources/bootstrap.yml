@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    config:
+     profile: test
+     enabled: false
+          
+---
+spring:
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8888
+      username: qbthon
+      password: qbthons3cr3t
+      fail-fast: true     
+          
