@@ -24,15 +24,15 @@ public class EventsServiceImpl implements EventsService{
 	public List<Events> getEvents() {
 		List<Events> events = (List<Events>)eventRepository.findAll();
 		events.forEach(event -> {
-			String skills = event.getSkills().stream()
+			String skills = event.getSkills()!=null?event.getSkills().stream()
 			           .map(a -> String.valueOf(a.getSkillName()))
-			           .collect(Collectors.joining(","));
-			String associates = event.getAssociateDetails().stream()
+			           .collect(Collectors.joining(",")):"";
+			String associates = event.getAssociateDetails()!=null?event.getAssociateDetails().stream()
 			           .map(a -> String.valueOf(a.getAssociateId()))
-			           .collect(Collectors.joining(","));
-			String smes = event.getSmeDetails().stream()
+			           .collect(Collectors.joining(",")):"";
+			String smes = event.getSmeDetails()!=null?event.getSmeDetails().stream()
 			           .map(a -> String.valueOf(a.getAssociateId()))
-			           .collect(Collectors.joining(","));
+			           .collect(Collectors.joining(",")):"";
 			event.setSkillsList(skills);
 			event.setAssociateList(associates);
 			event.setSmeList(smes);

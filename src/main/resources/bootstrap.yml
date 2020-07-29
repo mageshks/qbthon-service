@@ -3,6 +3,13 @@ spring:
     config:
      profile: test
      enabled: false
+     
+---
+spring:
+  cloud:
+    config:
+     profile: local
+     enabled: false     
           
 ---
 spring:

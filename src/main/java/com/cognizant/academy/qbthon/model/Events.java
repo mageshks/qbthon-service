@@ -37,6 +37,9 @@ public class Events {
     @DynamoDBTypeConvertedJson
     @DynamoDBAttribute(attributeName = "skills")
     private List<Skill> skills;
+
+    @DynamoDBAttribute(attributeName = "skillName")
+    private String skillName;
     
     private String skillsList;
     
